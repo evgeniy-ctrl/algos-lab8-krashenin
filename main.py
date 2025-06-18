@@ -5,14 +5,24 @@
 monthly_spending = [2689.56, 2770.38, 2394.04, 2099.91, 3182.20, 3267.12, 1746.83, 2545.72, 3328.20, 3147.30, 2462.61, 3890.45]
 ```  
 Напишите программу, которая с помощью цикла `for` вычисляет средние расходы Джона за первый семестр (январь–июнь) и второй семестр (июль–декабрь).  
-def money():
-    for i in monthly_spending:
-        first_sum = sum(monthly_spending[:6])/len(monthly_spending[:6])
-        last_sum = sum(monthly_spending[6:])/len(monthly_spending[6:])
-        print(first_sum)
-        print(last_sum)
+"""
+monthly_spending = [2689.56, 2770.38, 2394.04, 2099.91, 3182.20, 3267.12, 1746.83, 2545.72, 3328.20, 3147.30, 2462.61, 3890.45]
 
-print(money())
+first_semester_sum = 0.0
+second_semester_sum = 0.0
+
+for i in range(len(monthly_spending)):
+    if i < 6:  
+        first_semester_sum += monthly_spending[i]
+    else:      
+        second_semester_sum += monthly_spending[i]
+
+first_semester_avg = first_semester_sum / 6
+second_semester_avg = second_semester_sum / 6
+
+print(f"Средние расходы за первый семестр (январь-июнь): ${first_semester_avg:.2f}")
+print(f"Средние расходы за второй семестр (июль-декабрь): ${second_semester_avg:.2f}")
+
 """
 
 """
@@ -23,11 +33,7 @@ john_monthly_spending = [2689.56, 2770.38, 2394.04, 2099.91, 3182.20, 3267.12, 1
 sam_monthly_spending = [1969.62, 3939.37, 2241.59, 3968.27, 3068.80, 1755.02, 3885.66, 2491.67, 3828.49, 3171.32, 2771.32, 3380.37]
 ```  
 ### Напишите программу, которая сравнивает расходы Джона и Сэма по месяцам и подсчитывает количество месяцев, в которых Джон тратил больше.  
-john_spent_more_months = 0
-for john_spending, sam_spending in zip(john_monthly_spending, sam_monthly_spending):
-    if john_spending > sam_spending:
-        john_spent_more_months += 1
-print(f"Джон тратил больше, чем Сэм, в {john_spent_more_months} месяцах.")   
+
 """
 
 """
